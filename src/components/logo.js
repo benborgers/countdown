@@ -11,7 +11,8 @@ export default () => (
     `}
   >
     <span
-      role="image"
+      role="img"
+      aria-label="Direct Hit"
       css={css`
         display: inline-block;
         vertical-align: 10%;
