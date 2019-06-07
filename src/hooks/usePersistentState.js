@@ -1,7 +1,11 @@
 import { useState } from 'react'
 
 export default starter => {
-  const initialValue = JSON.parse(localStorage.getItem('data')) || starter;
+  let initialValue;
+  
+  if(typeof window !== 'undefined') {
+    initialValue = JSON.parse(localStorage.getItem('data')) || starter;
+  }
 
   const [data, setData] = useState(initialValue);
 
