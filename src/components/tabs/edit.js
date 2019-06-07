@@ -1,8 +1,8 @@
 import React from 'react'
 import { css } from '@emotion/core'
 
-import MiniHeading from '../components/miniHeading'
-import Select from '../components/select'
+import MiniHeading from '../miniHeading'
+import Select from '../select'
 
 export default props => {
   const data = props.data;
@@ -33,12 +33,12 @@ export default props => {
 
       <MiniHeading text="Countdown Type" />
       <Select
-        options={["Days Left", "Percentage Left"]}
+        options={["Days Left", "Percent Completed"]}
         selected={data.type}
         onChange = {handleTypeChange}
       />
 
-      {data.type === `Percentage Left` ? 
+      {data.type === `Percent Completed` ? 
         <div>
           <MiniHeading text="Start Date" />
           <input
