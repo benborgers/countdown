@@ -11,7 +11,7 @@ export default starter => {
 
   const setPersistentData = object => {
     setData(object);
-    localStorage.setItem('data', JSON.stringify(object))
+    localStorage.setItem('data', JSON.stringify(object));
   }
 
   return [data, setPersistentData];
