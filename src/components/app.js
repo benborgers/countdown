@@ -3,7 +3,7 @@ import { css } from '@emotion/core'
 
 import usePersistentState from '../hooks/usePersistentState'
 
-import Emoji from './emoji'
+import Logo from './logo'
 import Button from './button'
 
 import Edit from './edit'
@@ -38,17 +38,7 @@ export default () => {
         `}
       >
 
-        <h1
-          css={css`
-            font-weight: 700;
-            font-size: 20px;
-            grid-row: 1;
-            grid-column: 1;
-          `}
-        >
-          <Emoji emoji="🎯" />
-          Countdown
-        </h1>
+        <Logo />
 
         <div
           css={css`
