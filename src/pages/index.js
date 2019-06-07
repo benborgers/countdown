@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { css, Global } from '@emotion/core'
 
+import usePersistentState from '../hooks/usePersistentState'
+
 import Emoji from '../components/emoji'
 import Button from '../components/button'
 
@@ -11,6 +13,18 @@ export default () => {
   const [editOpen, setEditOpen] = useState(false);
 
   const handleEditClick = () => setEditOpen(!editOpen);
+
+  const today = new Date();
+  const weekFromToday = new Date(today.getTime() + (7 * 24 * 60 * 60 * 1000));
+
+  const formatDate = date => date.getFullYear() + '-' + (date.getMonth() < 9 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-' + date.getDate();
+
+  const [data, setData] = usePersistentState({
+    name: `Example Countdown`,
+    type: `Percentage Left`,
+    startDate: formatDate(today),
+    endDate: formatDate(weekFromToday)
+  });
 
   return (
     <div>
@@ -36,6 +50,8 @@ export default () => {
 
           :root {
             --brand: hsl(357, 73%, 45%);
+
+            --gray: hsl(357, 8%, 55%);
           }
         `}
       />
@@ -81,7 +97,7 @@ export default () => {
             grid-column: 1 / span 2;
           `}
         >
-          {editOpen ? <Edit /> : <div>placeholder home screen</div>}
+          {editOpen ? <Edit data={data} setData={setData}/> : <pre>{JSON.stringify(data, null, 2)}</pre>}
         </div>
 
       </div>

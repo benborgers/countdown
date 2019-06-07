@@ -7,6 +7,7 @@ export default props => (
       color: var(--brand);
       font-weight: 500;
       cursor: pointer;
+      transition: .2s;
 
       :active {
         opacity: .7;
