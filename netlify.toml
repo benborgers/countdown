@@ -4,3 +4,9 @@
 
 [dev]
   command = "gatsby develop"
+
+[[redirects]]
+  from = "https://countdown-elk.netlify.com/*"
+  to = "https://countdown.elk.sh/:splat"
+  status = 301
+  force = true
