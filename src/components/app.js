@@ -15,6 +15,7 @@ export default () => {
   const handleEditClick = () => setEditOpen(!editOpen);
 
   const today = new Date();
+  const yesterday = new Date(today.getTime() - (24 * 60 * 60 * 1000))
   const weekFromToday = new Date(today.getTime() + (7 * 24 * 60 * 60 * 1000));
 
   const formatDate = date => date.getFullYear() + 
@@ -26,12 +27,17 @@ export default () => {
   const [data, setData] = usePersistentState({
     name: `Example Countdown`,
     type: `Percent Completed`,
-    startDate: formatDate(today),
+    startDate: formatDate(yesterday),
     endDate: formatDate(weekFromToday)
   });
 
   return (
-    <div>
+    <div
+      css={css`
+        position: fixed;
+        width: 100vw;
+      `}
+    >
 
       <div
         css={css`
