@@ -10,6 +10,7 @@ export default props => (
       display: inline-block;
       vertical-align: 10%;
       font-size: .95em;
+      margin-right: 4px;
     `}
   >
     {props.emoji}

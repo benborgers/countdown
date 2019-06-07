@@ -1,8 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
 
-
-
 import MiniHeading from '../components/miniHeading'
 import Select from '../components/select'
 
@@ -27,6 +25,7 @@ export default props => {
           border: 1px solid var(--brand);
           border-radius: 4px;
           width: calc(70vw);
+          user-select: text;
         `}
         onChange = {handleNameChange}
         value = {data.name}

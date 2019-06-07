@@ -24,8 +24,8 @@ export default props => {
             border-radius: 4px;
             padding: 6px 10px;
             margin-right: 12px;
-            cursor: pointer;
             transition: .1s;
+            cursor: pointer;
             ${lastClicked === option ? `background-color: var(--brand); color: white;` : ``}
           `}
           onClick = {handleClick}
