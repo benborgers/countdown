@@ -3,6 +3,7 @@ module.exports = {
     name: `Countdown`
   },
   plugins: [
-    `gatsby-plugin-react-helmet`
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-emotion`
   ]
 }
