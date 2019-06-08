@@ -4,10 +4,14 @@ import { css, Global } from '@emotion/core'
 
 import App from '../components/app'
 
-export default () => (
-  <React.Fragment>
+export default () => {
+  
+
+  return (
+    <React.Fragment>
     <Helmet>
       <title>Countdown</title>
+      <link rel="shortcut icon" href="https://emojicdn.elk.sh/🎯" />
 
       <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
@@ -49,4 +53,5 @@ export default () => (
 
     <App />
   </React.Fragment>
-)
+  )
+}
