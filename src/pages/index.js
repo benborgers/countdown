@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import { css, Global } from '@emotion/core'
 
 import App from '../components/app'
+import NotMobile from '../components/notMobile'
 
 export default () => {
-  
+  const [isMobile, setIsMobile] = useState(true);
+
+  useEffect(() => {
+    if(!navigator.userAgent.match(/iPhone|Android/i)) {
+      setIsMobile(false);
+    }
+  }, [])
 
   return (
     <React.Fragment>
@@ -51,7 +58,7 @@ export default () => {
       `}
     />
 
-    <App />
+    {isMobile ? <App /> : <NotMobile />}
   </React.Fragment>
   )
 }
