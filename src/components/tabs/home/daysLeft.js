@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { css } from '@emotion/core'
 
 import Name from './name'
 
 export default ({ data, today, endDate }) => {
   const numberOfDaysLeft = Math.round((endDate - today) / (24 * 60 * 60 * 1000)).toLocaleString();
+
+  const [nameText, setNameText] = useState();
+
+  useEffect(() => {
+    setNameText(data.name);
+  }, [])
 
   return (
     <div>
@@ -30,7 +36,7 @@ export default ({ data, today, endDate }) => {
           {numberOfDaysLeft === 1 ? `day` : `days`} left.
         </p>
       </div>
-      <Name text={data.name} />
+      <Name text={nameText} />
     </div>
   )
 }
