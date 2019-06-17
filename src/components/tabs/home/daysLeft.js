@@ -6,8 +6,6 @@ import Name from './name'
 export default ({ data, today, endDate }) => {
   const numberOfDaysLeft = Math.round((endDate - today) / (24 * 60 * 60 * 1000)).toLocaleString();
 
-  console.log(numberOfDaysLeft)
-
   const [nameText, setNameText] = useState();
 
   useEffect(() => {
