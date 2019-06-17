@@ -6,6 +6,8 @@ import Name from './name'
 export default ({ data, today, endDate }) => {
   const numberOfDaysLeft = Math.round((endDate - today) / (24 * 60 * 60 * 1000)).toLocaleString();
 
+  console.log(numberOfDaysLeft)
+
   const [nameText, setNameText] = useState();
 
   useEffect(() => {
@@ -33,7 +35,7 @@ export default ({ data, today, endDate }) => {
             margin-left: 8px;
           `}
         >
-          {numberOfDaysLeft === 1 ? `day` : `days`} left.
+          {Math.abs(numberOfDaysLeft) == 1 ? `day` : `days`} left.
         </p>
       </div>
       <Name text={nameText} />
